@@ -25,6 +25,7 @@ export const AppStyleMain = styled.div(props => ({
     maxWidth: '1000px',
     fontFamily: 'Special Elite',
     textAlign: 'center',
+    margin: 'auto',
     'a:hover': {
       textDecoration: 'underline',
       fontWeight: 'bold'

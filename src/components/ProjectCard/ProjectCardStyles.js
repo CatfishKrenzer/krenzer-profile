@@ -9,6 +9,7 @@ export const ProjectCardContainer = styled(FlexColumnDiv)(props => ({
   background: props.theme === 'dark' ? '#262626' : '#d4d4d4',
   paddingBottom: '30px',
   justifyContent: "center",
+  margin: '20px auto 0',
   '& > *': {
     margin: '20px auto',
   },

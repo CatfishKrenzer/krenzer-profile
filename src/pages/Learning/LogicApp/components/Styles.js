@@ -5,6 +5,7 @@ export const TruthTable = styled.table((props) => ({
   borderColor: props.theme === 'light' ? 'black' : 'white',
   border: 'none',
   borderCollapse: 'collapse',
+  margin: 'auto',
 
   'td': {
     textAlign: 'center',

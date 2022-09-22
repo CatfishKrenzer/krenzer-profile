@@ -1,4 +1,5 @@
 import React from "react";
+import MultiPageContainer from "../../../components/MultiPageContainer/MultiPageContainer";
 import { FlexColumnDiv } from "../../../styles";
 import AndGate from "./components/AndGate";
 import NandGate from "./components/NandGate";
@@ -13,14 +14,22 @@ const LogicApp = (props) => {
     <>
       <FlexColumnDiv>
         <h1>Learning Logic Gates</h1>
-
-        <Wire theme={props.theme} mobile={props.mobile} />
-        <NotGate theme={props.theme} mobile={props.mobile} />
-        <OrGate theme={props.theme} mobile={props.mobile} />
-        <AndGate theme={props.theme} mobile={props.mobile} />
-        <NorGate theme={props.theme} mobile={props.mobile} />
-        <NandGate theme={props.theme} mobile={props.mobile} />
-        <XorGate theme={props.theme} mobile={props.mobile} />
+        <MultiPageContainer theme={props.theme} mobile={props.mobile}
+          pages={[{
+            name: 'Wire', element: <Wire theme={props.theme} mobile={props.mobile} />
+          }, {
+            name: 'NOT Gate', element: <NotGate theme={props.theme} mobile={props.mobile} />
+          }, {
+            name: 'OR Gate', element: <OrGate theme={props.theme} mobile={props.mobile} />
+          }, {
+            name: 'AND Gate', element: <AndGate theme={props.theme} mobile={props.mobile} />
+          }, {
+            name: 'NOR Gate', element: <NorGate theme={props.theme} mobile={props.mobile} />
+          }, {
+            name: 'NAND Gate', element: <NandGate theme={props.theme} mobile={props.mobile} />
+          }, {
+            name: 'XOR Gate', element: <XorGate theme={props.theme} mobile={props.mobile} />
+          }]} />
       </FlexColumnDiv>
     </>
   )
