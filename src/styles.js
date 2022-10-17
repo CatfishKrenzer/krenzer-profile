@@ -55,4 +55,5 @@ export const FlexRowDiv = styled.div({
 
 export const FlexRowCenteredDiv = styled(FlexRowDiv)({
   justifyContent: 'space-evenly',
+  flexWrap: 'wrap'
 })

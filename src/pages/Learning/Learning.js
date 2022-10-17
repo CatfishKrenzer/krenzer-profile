@@ -2,7 +2,8 @@ import React from "react";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import { FlexColumnDiv, FlexRowCenteredDiv } from "../../styles";
 
-const logicAppImage = require('./LogicApp/app-image.png')
+const logicAppImage = require('./LogicApp/app-image.png');
+
 const projects = [{
   title: 'Learn Logic Gates',
   image: logicAppImage,
