@@ -21,6 +21,8 @@ const Header = (props) => {
           <DropdownMenuButton href={`/`}>Home</DropdownMenuButton>
           <DropdownMenuButton href={`/learning/`}>Knowledge Sharing</DropdownMenuButton>
           <DropdownMenuButton href={`/engineering/`}>Engineering Projects</DropdownMenuButton>
+          <DropdownMenuButton href={`/professional/`}>Professional Summary</DropdownMenuButton>
+
           <DropdownMenuButton target="_blank" rel="nofollow" href={`https://www.linkedin.com/in/johnkrenzer/`}>LinkedIn</DropdownMenuButton>
 
         </CustomDropdownMenu>

@@ -11,6 +11,7 @@ import Landing from './pages/Landing/Landing';
 import Learning from './pages/Learning/Learning';
 import Engineering from './pages/Engineering/Engineering';
 import LogicApp from './pages/Learning/LogicApp/LogicApp';
+import Professional from './pages/Professional/Professional';
 
 function App() {
   const personalSettings = JSON.parse(localStorage.getItem('personalSettings'));
@@ -39,6 +40,9 @@ function App() {
           } />
           <Route exact path="/engineering" element={
             <Engineering theme={theme} mobile={mobile} />
+          } />
+          <Route exact path="/professional" element={
+            <Professional theme={theme} mobile={mobile} />
           } />
           <Route path="/" element={
             <Landing theme={theme} mobile={mobile} />
