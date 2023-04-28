@@ -11,6 +11,7 @@ import Landing from './pages/Landing/Landing';
 import Learning from './pages/Learning/Learning';
 import Engineering from './pages/Engineering/Engineering';
 import LogicApp from './pages/Learning/LogicApp/LogicApp';
+import NeuralNetwork from './pages/Learning/NeuralNetwork/NeuralNetwork';
 import Professional from './pages/Professional/Professional';
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
           } />
           <Route exact path="/learning/logic-gates" element={
             <LogicApp theme={theme} mobile={mobile} />
+          } />
+          <Route exact path="/learning/neural-network" element={
+            <NeuralNetwork theme={theme} mobile={mobile} />
           } />
           <Route exact path="/engineering" element={
             <Engineering theme={theme} mobile={mobile} />

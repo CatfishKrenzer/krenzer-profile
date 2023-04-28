@@ -5,11 +5,17 @@ import { FlexColumnDiv, FlexRowCenteredDiv } from "../../styles";
 const logicAppImage = require('./LogicApp/app-image.png');
 
 const projects = [{
-  title: 'Learn Logic Gates',
-  image: logicAppImage,
-  text: 'An interactive application to help learn the basics about logic gates.',
-  link: '/learning/logic-gates'
-}]
+    title: 'Learn Logic Gates',
+    image: logicAppImage,
+    text: 'An interactive application to help learn the basics about logic gates.',
+    link: '/learning/logic-gates'
+  },{
+    title: 'Neural Network',
+    image: logicAppImage,
+    text: 'Neural Network Interface',
+    link: '/learning/neural-network'
+  }
+]
 
 const Learning = (props) => {
   return (
