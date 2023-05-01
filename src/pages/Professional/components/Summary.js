@@ -14,7 +14,6 @@ const Summary = (props) => {
             'Access-Control-Allow-Origin' : '*',
             'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
           }}).then(data =>{
-            console.log(data)
             setProfile(data)
         }).catch(e =>{
             setError('Error Occurred Reading Profile')

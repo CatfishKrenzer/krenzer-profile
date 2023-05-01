@@ -1,6 +1,6 @@
 
 import React, {useRef, useEffect} from 'react'
-import {NeuralNetworkSingleCanvas} from '../NeuralNetworkStyles';
+import {NeuralNetworkSingleCanvas, NeuralNetworkButton} from '../NeuralNetworkStyles';
 
 const DrawingCanvas = props => {
     const canvasRef = useRef(null);
@@ -18,7 +18,6 @@ const DrawingCanvas = props => {
       }, [props.theme])
 
       const reposition = (event) => {
-        console.log(`${event.clientX} - ${canvas.offsetLeft}`)
         coord.x = event.clientX - canvas.offsetLeft;
         coord.y = event.clientY - canvas.offsetTop;
       }
@@ -28,6 +27,7 @@ const DrawingCanvas = props => {
       }
       const stop = () => {
         document.removeEventListener("mousemove", draw);
+        props.setCanvasDrawing(canvas)
       }
       const draw = (event) => {
         context.beginPath();
@@ -39,8 +39,20 @@ const DrawingCanvas = props => {
         context.lineTo(coord.x, coord.y);
         context.stroke();
       }
+      const clear = () =>{
+        canvas = canvasRef.current
+        context = canvas.getContext('2d');
+        const fillColor = props.theme === 'light' ? 0 : 255;
+        context.clearRect(0, 0, canvas.width, canvas.height)
+
+        context.fillStyle = fillColor;
+        context.fillRect(0, 0, canvas.width, canvas.height)
+      }
     return (
+      <>
         <NeuralNetworkSingleCanvas ref={canvasRef} {...props} theme={props.theme} width={150} height={150} />
+        <NeuralNetworkButton {...props} onClick={clear}>Clear</NeuralNetworkButton>
+      </>
     )
 }
 
