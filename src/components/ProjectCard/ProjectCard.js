@@ -4,7 +4,7 @@ import { ProjectCardContainer } from "./ProjectCardStyles";
 const ProjectCard = (props) => {
   return (
     <>
-      <div>
+      <div key={`${props.keyName}`}>
         <a href={props.link}>
           <ProjectCardContainer theme={props.theme}>
             <h2>{props.title}</h2>

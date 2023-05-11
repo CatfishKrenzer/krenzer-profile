@@ -25,19 +25,18 @@ const NeuralNetwork = (props) => {
         sample[j] = 255 - sample[j];
       }
     }
-    console.log(sample)
     setCanvasDrawing(sample)
   }
 
   const onSubmit = async () =>{
-    const prediction = await axios.post('http://localhost:9090/neural-network/predict',{
+    setPrediction('...')
+    const prediction = await axios.post('https://zqdrzzg494.execute-api.us-east-1.amazonaws.com/v1/neural-network/predict',{
       predictData:canvasDrawing
     }).catch((err)=>{
       console.log(err)
       return {error: true}
     })
-    console.log(prediction)
-    setPrediction(prediction.error ? 'Error Occurred' : prediction.data.prediction)
+    setPrediction((prediction.error || prediction?.data?.data?.error) ? 'Error Occurred' : prediction.data.data.prediction)
   }
   
   return (
