@@ -13,6 +13,7 @@ import Engineering from './pages/Engineering/Engineering';
 import LogicApp from './pages/Learning/LogicApp/LogicApp';
 import NeuralNetwork from './pages/Learning/NeuralNetwork/NeuralNetwork';
 import Professional from './pages/Professional/Professional';
+import DrawingBoard from './pages/Learning/DrawingBoard/DrawingBoard';
 
 function App() {
   const personalSettings = JSON.parse(localStorage.getItem('personalSettings'));
@@ -41,6 +42,9 @@ function App() {
           } />
           <Route exact path="/learning/neural-network" element={
             <NeuralNetwork theme={theme} mobile={mobile} />
+          } />
+          <Route exact path="/learning/marker-board" element={
+            <DrawingBoard theme={theme} mobile={mobile} />
           } />
           <Route exact path="/engineering" element={
             <Engineering theme={theme} mobile={mobile} />

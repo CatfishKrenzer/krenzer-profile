@@ -4,12 +4,19 @@ import { FlexColumnDiv, FlexRowCenteredDiv } from "../../styles";
 
 const logicAppImage = require('./LogicApp/app-image.png');
 const neuralNetworkImage = require('./NeuralNetwork/app-image.jpg');
+const drawingBoardImage = require('./DrawingBoard/app-image.jpg');
+
 
 const projects = [{
     title: 'Learn Logic Gates',
     image: logicAppImage,
     text: 'An interactive application to help learn the basics about logic gates.',
     link: '/learning/logic-gates'
+  },{
+    title: 'Marker Board',
+    image: drawingBoardImage,
+    text: 'A marker board application to demonstrate the use of a canvas for drawing in both touchscreen and desktop browsers.',
+    link: '/learning/marker-board'
   },{
     title: 'Neural Network',
     image: neuralNetworkImage,
