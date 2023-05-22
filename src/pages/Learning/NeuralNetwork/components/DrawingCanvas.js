@@ -13,23 +13,33 @@ const DrawingCanvas = props => {
         context.fillStyle = props.theme !== 'light' ? '#FFFFFF':'#000000'
         context.fillRect(0, 0, context.canvas.width, context.canvas.height)
         //   Drawing
+        canvas.addEventListener("touchstart", start);
         canvas.addEventListener("mousedown", start);
+        canvas.addEventListener("touchend", stop);
         canvas.addEventListener("mouseup", stop);
       }, [props.theme])
 
       const reposition = (event) => {
-        coord.x = event.clientX - canvas.offsetLeft;
-        coord.y = event.clientY - canvas.offsetTop;
+        const clientX = (event?.targetTouches?.[0] ? event?.targetTouches?.[0]?.pageX : event?.changedTouches?.[event?.changedTouches?.length-1]?.pageX) ?? event?.clientX;
+        const clientY = (event?.targetTouches?.[0] ? event?.targetTouches?.[0]?.pageY : event?.changedTouches?.[event?.changedTouches?.length-1]?.pageY) ?? event?.clientY;
+
+        coord.x = clientX - canvas.offsetLeft;
+        coord.y = clientY - canvas.offsetTop;
       }
       const start = (event) => {
+        event.preventDefault();
+        document.addEventListener("touchmove", draw);
         document.addEventListener("mousemove", draw);
         reposition(event);
       }
-      const stop = () => {
+      const stop = (event) => {
+        event.preventDefault();
+        document.removeEventListener("touchmove", draw);
         document.removeEventListener("mousemove", draw);
         props.setCanvasDrawing(canvas)
       }
       const draw = (event) => {
+        event.preventDefault() 
         context.beginPath();
         context.lineWidth = 5;
         context.lineCap = "round";
