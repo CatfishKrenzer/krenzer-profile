@@ -2,9 +2,9 @@ import React from "react";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import { FlexColumnDiv, FlexRowCenteredDiv } from "../../styles";
 
-const logicAppImage = require('./LogicApp/app-image.png');
-const neuralNetworkImage = require('./NeuralNetwork/app-image.jpg');
-const drawingBoardImage = require('./DrawingBoard/app-image.jpg');
+const logicAppImage = require('./LogicApp/logicAppImage.png');
+const neuralNetworkImage = require('./NeuralNetwork/neuralNetworkImage.jpg');
+const drawingBoardImage = require('./DrawingBoard/drawingBoardImage.jpg');
 
 
 const projects = [{

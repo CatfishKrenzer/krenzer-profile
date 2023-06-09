@@ -14,7 +14,7 @@ export const AppStyleMain = styled.div(props => ({
   },
   'h1, h2, h3, h4': {
     fontFamily: 'Electrolize',
-    fontSize: props.mobile ? '2em' : '3em',
+    fontSize: props.mobile ? '3em' : '4em',
     textAlign: 'center'
   },
   'span': {
